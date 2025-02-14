@@ -49,3 +49,40 @@ base condition is met.
 
   ```
 
+## CLosure
+
+### What is a closure��
+
+  + Closure is the combination of a function bundled together (enclosed) with references to its
+surrounding state (the lexical enviroment). In other words a closure gives you access to an
+outer functions scope from an inner function
+
+    ```javascript
+    function findmax(){
+        let max = 0;
+        return (num)=>{
+            max = Math.max(max, num);
+            return max;
+        }
+    }
+
+    let max = findmax();
+    ```
+
+  + A closure is a function that remembers its outer variables and
+can access them. In some languages, this is not possible, or
+the function must be written in a special way to create a
+closure.
+
+    ```javascript
+    
+    function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+    }
+    let counter1 = createCounter();
+
+    ```
